@@ -25,7 +25,7 @@ async function insertEspecie(req,res) {
         await sql.query('call InsertEspecie(?)',[descricao])
 
         res.status(201).json({
-            "menssage": "Espécie insirada com sucesso",
+            "menssage": "Espécie foi inserida com sucesso",
             descricao
         })
 

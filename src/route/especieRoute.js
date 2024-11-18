@@ -2,9 +2,9 @@ const express = require('express')
 const router = express.Router()
 const especieController = require('../controller/especieController.js')
 
-router.get('/especie',especieController.getEspecies)
+router.get('/especie', especieController.getEspecies)
 
-router.post('/especie',especieController.insertEspecie)
+router.post('/especie', especieController.insertEspecie)
 
 router.put('/especie/:idEspecie', especieController.updateEspecie)
 
