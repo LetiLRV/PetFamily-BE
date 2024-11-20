@@ -6,8 +6,8 @@ router.get('/porte', porteController.getPortes)
 
 router.post('/porte', porteController.insertPorte)
 
-router.put('porte', porteController.updatePorte)
+router.put('/porte/:idPorte', porteController.updatePorte)
 
-router.delete('porte', porteController.deletePorte)
+router.delete('/porte/:idPorte', porteController.deletePorte)
 
 module.exports = router 

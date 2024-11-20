@@ -40,9 +40,9 @@ async function updatePorte(req,res) {
         const {idPorte} = req.params
         const {descricao} = req.body
 
-        await sql.query('call updatePorte(?,?)', [idPorte, descricao])
+        await sql.query('call UpdatePorte(?,?)', [idPorte, descricao])
 
-        res.status(201).json({
+        res.status(200).json({
             "menssage" : "Foi alterado o porte com sucesso", 
             idPorte, 
             descricao
@@ -56,7 +56,22 @@ async function updatePorte(req,res) {
 }
 
 async function deletePorte(req,res) {
-    
+    try{
+        const sql = await sqlconnection()
+
+        const {idPorte} = req.params
+
+        await sql.query('call deletePorte(?)',[idPorte])
+
+        res.status(200).json({
+            "menssage" : "O porte foi apagado com sucesso",
+            idPorte
+        })
+
+    } catch(error){
+        res.status(500).send('Erro ao tentar apagar o porte, verifique o console')
+        console.log(error)
+    }
 }
 
 
