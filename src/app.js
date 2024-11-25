@@ -6,6 +6,7 @@ const port = 3000;
 const especieRoute = require('../src/route/especieRoute.js')
 const racaRoute = require('../src/route/racaRoute.js')
 const porteRoute = require('../src/route/porteRoute.js')
+const petRoute = require('../src/route/petRoute.js')
 
 app.listen(port,()=>{
     console.log(`Servidor aberto http://localhost:${port}`)
@@ -20,3 +21,4 @@ app.use(express.json())
 app.use(especieRoute)
 app.use(racaRoute)
 app.use(porteRoute)
+app.use(petRoute)
