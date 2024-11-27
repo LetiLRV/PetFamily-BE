@@ -2,15 +2,15 @@ const sqlconnection = require('../connection/sqlconnection.js')
 
 async function getPet(req,res) {
     try{
-        const sql = await sqlconnection()
+        const sql = await sqlconnection();
 
-        const [result] = await sql.query('call getpet')
+        const [result] = await sql.query('CALL getpet');
 
-        res.status(200).send(result)
+        res.status(200).send(result[0]);
 
         } catch (error) {
-            res.status(500).send('Erro ao ler os pets, verifique o console')
-            console.log(error)
+            res.status(500).send('Erro ao ler os pets, verifique o console');
+            console.log(error);
         }
     
 }
